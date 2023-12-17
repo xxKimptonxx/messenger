@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './comps/header';
+import Drawer from './comps/drawer';
+import React, { useState } from 'react';
+import { Route,Routes } from 'react-router-dom';
+import HomePage from './comps/pages/home';
+import AboutPage from './comps/pages/about';
+import MPage from './comps/pages/messenger';
+import PageNotFound from './comps/pages/404';
 
 function App() {
+  const [isDrawerOpen,setIsDrawerOpen] = useState(false)
+  function toggleDrawer(){
+    setIsDrawerOpen(!isDrawerOpen)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer}/>
+      <Header toggleDrawer={toggleDrawer} setIsDrawerOpen={setIsDrawerOpen}/>
+      <Routes>
+        <Route  path='/'element={<HomePage/>}/>
+        <Route path='about'element={<AboutPage/>}/>
+        <Route path='messenger'element={<MPage/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
+      </Routes>
+      
     </div>
   );
 }

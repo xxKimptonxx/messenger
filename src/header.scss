@@ -1,0 +1,136 @@
+header{
+  //sizing
+  height :75px;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  
+  //keeping in place
+  position: sticky;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //shadow
+  -webkit-box-shadow: 0 3.5px 15px 3.5px #dddddd;
+  -moz-box-shadow: 0 3.5px 15px 3.5px #dddddd;
+  box-shadow: 0 3.5px 15px 3.5px #dddddd;
+
+}
+.TopHeader{
+  height:75px ;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BottomHeader{
+  height: 35px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  button{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    height: 35px;
+    width: 20%;
+    max-width: 200px;
+
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Sample padding */
+    outline: none; /* Remove default button outline */
+
+    /* Add borders to the left and right sides */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+    /* Remove borders on the top and bottom */
+    border-top: none;
+    border-bottom: none;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    svg{
+      margin-right: 10px;
+
+    }
+    .link{
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+    }
+  }
+  button:first-child {
+    border-left: none; /* Remove left outline for the first button */
+  }
+  
+  button:last-child {
+    border-right: none; /* Remove right outline for the last button */
+  }
+}
+.dh{
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items:normal;
+}
+.RightHeaderComps{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    //positioning
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.LeftHeaderComps{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    //positioning
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.LeftHeaderCompsTablet{
+  position: absolute;
+    width: 225px;
+    height: 50px;
+    //positioning
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+}
+
+//Drawer hamburger
+.hamburger {
+    cursor: pointer;
+    z-index: 4;
+  }
+  
+  .hamburger input {
+    display: none;
+    z-index: 4;
+  }
+  
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 4;
+  }
+  
+
+  
